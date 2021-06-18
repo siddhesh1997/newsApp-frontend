@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="topHeadlines">Top Headlines</a>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li> -->
+        <li class="nav-item">
+          <span class="nav-link" [class.disabled]="userLogin ? true : false">Followed Topics</span>
+        </li>
+
+        <li class="nav-item" *ngIf="!userLogin">
+            <a class="nav-link" (click)="authenticate()">Login with Google</a><!-- routerLink="/login" -->
+        </li>
+
+
+        <li class="dropdown" id="logoutli" (click)="profileToggle($event)">
+					<a class="dropdown-toggle cursor" id="logoutanchor" type="button" data-toggle="dropdown">
+						<img src="./assets/images/user.png" id="logoutImg1" width="24" />
+						<img src="./assets/images/carot.png" id="logoutImg2" width="10" />
+					</a>
+				</li>
+      </ul>
+      <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> -->
+    </div>
+  </nav>
+
+
+<!--Profile Box-->
+  <div class="profile-box" *ngIf="showProfile" (click)="clickedInside($event)">
+    <ul class="ul-reset">
+      <li><span class="text-muted">Welcome, </span><br /> {{ username | uppercase}}</li>
+    
+      <li (click)="logout()" class="cursor"> &nbsp;Logout</li> 
+    </ul>
+  </div>
+
+
+<router-outlet></router-outlet>

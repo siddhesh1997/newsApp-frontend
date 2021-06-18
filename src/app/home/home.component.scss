@@ -1,0 +1,39 @@
+@media (min-width: 768px){
+    .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+        margin-left: 0px!important;
+    }
+    }
+    
+    nav.navbar .navbar-brand .menu-hamburger {
+        position: absolute;
+        top: 17px;
+        left: 4px!important;
+        width: 25px;
+        margin-left: 0px;
+    }
+    
+    @media (max-width: 768px){
+        #logo {
+            margin-left: 5px!important;
+        }
+    }
+    
+    @media (max-width: 768px){
+        .logoImg {
+            margin-left: 35px!important;
+            margin-top:4px!important;
+        }
+    }
+    
+    @media (min-width: 768px){
+        .logoImg {
+            margin-left: 20px!important;
+            margin-top:4px!important;
+        }
+    }
+    
+    
+    .home {
+        margin-left: 30px!important;
+        height: 20px!important;
+    }
